@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
 
 
   def show
-    
+         product = Product.create(product_params) 
  render json: product, status: 201
     end
   end

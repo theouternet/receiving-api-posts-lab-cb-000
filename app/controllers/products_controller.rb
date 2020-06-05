@@ -25,9 +25,8 @@ class ProductsController < ApplicationController
 
 
   def show
- render json: product, status: 201    respond_to do |format|
-      format.html { render :show }
-      format.json { render json: @product }
+    
+ render json: product, status: 201
     end
   end
 

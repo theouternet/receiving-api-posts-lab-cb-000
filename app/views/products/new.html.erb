@@ -21,6 +21,12 @@
   <p id="productInventory"></p>
 </div>
 
+<div id="productResult">  
+  <h2 id="productName"></h2>
+  <span id="productPrice"></span>  
+  <p id="productDescription"></p>
+</div> 
+
 <script type="text/javascript" charset="utf-8">
   $(function () {
     $('form').submit(function(event) {
@@ -31,12 +37,12 @@
       var posting = $.post('/products', values);
 
       posting.done(function(data) {
-        var post = data;
-        $("#productName").text(post["name"]);
-        $("#productDescription").text(post["description"]);
-        $("#productPrice").text(post["price"]);
-        $("#productInventory").text(post["inventory"]);
+        var product = data; 
+  debugger
+        $("#productName").text(product["name"]);
+        $("#productDescription").text(product["description"]);
+        $("#productPrice").text("$" + product["price"]);
       });
     });
   });
-</script>
+</script> 
